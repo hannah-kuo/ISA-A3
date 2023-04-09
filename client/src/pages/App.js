@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react";
-import PokemonPage from "../components/pokemonComponent";
-import Pagination from "../components/pagination";
-import TypeBox from "../components/typeBoxes";
-import { useNavigate } from "react-router-dom";
-import { apiGetAllPokemon } from "../api/pokeAPI";
-import withBasicAuth from "../components/withBasicAuth";
-import { Button} from "react-bootstrap";
-import { apiLogout } from "../api/pokeAPI";
+import { useEffect, useState } from 'react';
+import PokemonPage from '../components/pokemonComponent';
+import Pagination from '../components/pagination';
+import TypeBox from '../components/typeBoxes';
+import { useNavigate } from 'react-router-dom';
+import { apiGetAllPokemon } from '../api/pokeAPI';
+import withBasicAuth from '../components/withBasicAuth';
+import { Button } from 'react-bootstrap';
+import { apiLogout } from '../api/pokeAPI';
+import '../App.css';
 
 function App() {
 
@@ -14,11 +15,11 @@ function App() {
   const [filters, setFilter] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [pokemonPerPage] = useState(10);
-  
+
   const navigate = useNavigate();
 
   const getPokemon = async () => {
-    
+
     apiGetAllPokemon()
       .then(res => res.data)
       .then(data => {
@@ -34,7 +35,7 @@ function App() {
 
   useEffect(() => {
     getPokemon();
-   }, [filters]);
+  }, [filters]);
 
   var lastRecord = currentPage * pokemonPerPage;
   var firstRecord = lastRecord - pokemonPerPage;
@@ -42,18 +43,22 @@ function App() {
   var numOfPages = Math.ceil(pokemon.length / pokemonPerPage);
 
   return (
-    <>
-    <Button onClick={ async() => {
-            await apiLogout();
-            navigate("/login");
-            }}>
-            Logout
-    </Button>
-    <TypeBox currentFilters={filters} setFilters={setFilter}/>
-    <PokemonPage currentPokemon={ currentPokemon } currentPage= { currentPage }/>
-    <Pagination numPages={numOfPages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
-    <button onClick={() => navigate("/adminlogin")}> Admin Privledges! </button>
-    </>
+    <div className="app-container">
+      <Button
+        onClick={async () => {
+          await apiLogout();
+          navigate('/login');
+        }}
+      >
+        Logout
+      </Button>
+      <div className="type-box-container">
+        <TypeBox currentFilters={filters} setFilters={setFilter} />
+      </div>
+      <PokemonPage currentPokemon={currentPokemon} currentPage={currentPage} />
+      <Pagination numPages={numOfPages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <button onClick={() => navigate('/adminlogin')}> Admin Privileges! </button>
+    </div>
   );
 }
 
