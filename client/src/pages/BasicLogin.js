@@ -17,6 +17,12 @@ function BasicLogin() {
         checkUser();
     };
 
+    const handleAdminLogin = (e) => {
+      e.preventDefault();
+      navigate('/adminlogin');
+    };
+    
+
     const checkUser = async () => {
         const { error, data: resData } = await apiLogin(data);
 
@@ -61,6 +67,9 @@ function BasicLogin() {
               <br />
               <button type="submit">
                 Login
+              </button>
+              <button onClick={handleAdminLogin}>
+                Admin Login
               </button>
             </form>
             {credentialError ? <h1>Credentials Entered Incorrectly</h1> : ''}
