@@ -1,0 +1,37 @@
+/* admin-page.css */
+.admin-container {
+    background-color: #F7E4CB;
+    padding: 20px;
+  }
+  
+  .admin-container h1 {
+    color: #4A362F;
+    margin-bottom: 20px;
+  }
+  
+  .admin-container .card {
+    background-color: #F7E4CB;
+    color: #7A6656;
+    margin-bottom: 20px;
+    border: none;
+  }
+  
+  .admin-container button {
+    background-color: #BBA390;
+    color: #F7E4CB;
+    border: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    transition: background-color 0.3s;
+    margin: 5px;
+  }
+  
+  .admin-container button:hover {
+    background-color: #957166;
+  }
+  
+  .admin-container .card-title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  

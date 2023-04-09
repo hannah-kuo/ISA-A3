@@ -75,7 +75,7 @@ function UniqueUsers() {
                 + dateRange.startDate 
                 + " and " + dateRange.endDate,
                 data: allValues,
-                backgroundColor: "blue",
+                backgroundColor: "#4A362F",
             }
         ]
     }

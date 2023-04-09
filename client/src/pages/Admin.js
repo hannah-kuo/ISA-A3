@@ -7,66 +7,69 @@ import Endpoints from "../components/usersByEndpoint";
 import withAdminAuth from "../components/withAdminAuth";
 import { apiLogout } from "../api/pokeAPI";
 import { useNavigate } from "react-router-dom";
-
+import '../styles/admin.css';
 
 function AdminPage() {
     const navigate = useNavigate();
 
-    return(
-
-        <div> 
+    return (
+        <div className="admin-container">
             <div>
-            <Button onClick={ async() => {
-                await apiLogout();
-                navigate("/login");
-            }}>Logout</Button>
-             <h1 style={ {textAlign: 'center' }}>
-                Admin DashBoard
-            </h1> 
+                <Button onClick={async () => {
+                    await apiLogout();
+                    navigate("/login");
+                }}>Logout
+                </Button>
+                <h1 style={{ textAlign: 'center' }}>
+                    Admin DashBoard
+                </h1>
             </div>
 
             <Container>
-                <Row xs={1} sm={3}>
+                <Row xs={1} md={2}>
                     <Col>
                         <Card>
-                            <Card.Title style={ { textAlign: 'center' } }> 
-                                Number of Errors by Endpoint
-                            </Card.Title>
-                            <ErrorEndpoints/>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card>
-                            <Card.Title style={ { textAlign: 'center' } }> 
-                                Top API Users
-                            </Card.Title>
-                            <TopUsers/>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card>
-                            <Card.Title style={ { textAlign: 'center' } }> 
+                            <Card.Title style={{ textAlign: 'center' }}>
                                 Unique Users Over the Last Two Days
                             </Card.Title>
-                            <UniqueUsers/>
+                            <UniqueUsers />
+                        </Card>
+                    </Col>
+                    <Col>
+                        <Card>
+                            <Card.Title style={{ textAlign: 'center' }}>
+                                Top API Users
+                            </Card.Title>
+                            <TopUsers />
                         </Card>
                     </Col>
                 </Row>
-                <Row xs={1}>
+                <Row xs={1} md={2}>
+
                     <Col>
                         <Card>
-                            <Card.Title style={ { textAlign: 'center' } }> 
-                                Recent 4xx Errors
+                            <Card.Title style={{ textAlign: 'center' }}>
+                                Number of Errors by Endpoint
                             </Card.Title>
-                            <RecentErrors/>
+                            <ErrorEndpoints />
                         </Card>
                     </Col>
                     <Col>
-                        <Card> 
-                            <Card.Title style={ { textAlign: 'center' } }> 
+                        <Card>
+                            <Card.Title style={{ textAlign: 'center' }}>
+                                Recent 4xx Errors
+                            </Card.Title>
+                            <RecentErrors />
+                        </Card>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Card>
+                            <Card.Title style={{ textAlign: 'center' }}>
                                 Top User of Each Endpoint
                             </Card.Title>
-                            <Endpoints/>
+                            <Endpoints />
                         </Card>
                     </Col>
                 </Row>

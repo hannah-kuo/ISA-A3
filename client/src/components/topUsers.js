@@ -50,7 +50,7 @@ function TopUsers() {
                 {   
                 label: "Top API users on " + currentDate ,
                 data: allValues,
-                backgroundColor: "red",
+                backgroundColor: "#4A362F",
             }
         ]
     }

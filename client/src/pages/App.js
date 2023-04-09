@@ -54,7 +54,7 @@ function App() {
         >
           Logout
         </button>
-        <button className="admin-button" onClick={() => navigate('/adminlogin')}> Admin Privileges! </button>
+        <button className="admin-button" onClick={() => navigate('/adminlogin')}> Admin Dashboard </button>
         <br />
       </header>
       <div className="type-box-container">
