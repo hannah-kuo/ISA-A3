@@ -14,15 +14,15 @@ function AdminPage() {
 
     return (
         <div className="admin-container">
-            <div>
+            <div className="header-container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <h1 style={{ margin: 'auto', position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
+                    Admin DashBoard
+                </h1>
                 <Button onClick={async () => {
                     await apiLogout();
                     navigate("/login");
                 }}>Logout
                 </Button>
-                <h1 style={{ textAlign: 'center' }}>
-                    Admin DashBoard
-                </h1>
             </div>
 
             <Container>
@@ -45,7 +45,6 @@ function AdminPage() {
                     </Col>
                 </Row>
                 <Row xs={1} md={2}>
-
                     <Col>
                         <Card>
                             <Card.Title style={{ textAlign: 'center' }}>
