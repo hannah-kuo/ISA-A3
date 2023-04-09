@@ -10,8 +10,8 @@ const getTypes = () => {
         chunks += chunk;
       });
       res.on("end", async (data) => {
-        possibleTypes = JSON.parse(chunks)
-        possibleTypes = await possibleTypes.map(element => element.english)
+        possibleTypes = JSON.parse(chunks);
+        possibleTypes = await possibleTypes.map(element => element.english);
         pokeSchema = new Schema({
           "id": {
             type: Number,
@@ -37,10 +37,10 @@ const getTypes = () => {
             "Speed": Number
           }
         })
-        resolve(pokeSchema)
+        resolve(pokeSchema);
       })
     })
   })
 }
 
-module.exports = { getTypes }
+module.exports = { getTypes };

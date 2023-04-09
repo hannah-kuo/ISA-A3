@@ -26,23 +26,15 @@ const schema = new mongoose.Schema({
     unique: true,
     trim: true,
     min: 3
-  },
-  role: {
+  }, 
+  apiKey: {
     type: String,
+  }, 
+  admin: {
+    type: Boolean, 
     required: true,
-    trim: true,
-    default: "user",
-    enum: ["user", "admin"]
-  },
-  token_valid: {
-    type: Boolean,
-    default: false
+    default: true
   }
 })
 
 module.exports = mongoose.model('pokeusers', schema) //pokeUser is the name of the collection in the db
-
-
-
-
-
