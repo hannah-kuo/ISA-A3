@@ -42,7 +42,7 @@ function TypeBox( { currentFilters, setFilters } ) {
                             id={item.english} 
                             name="pokeTypes" 
                             onChange={() => addToFilter(item.english)}/>
-                            {item.english}
+                            {" " + item.english}
                         </label>
                         <br/>
                     </Col>

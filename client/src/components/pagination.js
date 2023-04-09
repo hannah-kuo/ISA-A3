@@ -30,7 +30,7 @@ function Pagination({ numPages, currentPage, setCurrentPage }) {
                     if (number < currentPage + 5 && number > currentPage - 1) {
                         return(
                         <>
-                         <button onClick={() => setCurrentPage(number)} style= {{backgroundColor: (number == currentPage) ? 'red' : ''}}>
+                         <button onClick={() => setCurrentPage(number)} style= {{backgroundColor: (number == currentPage) ? '#4A362F' : ''}}>
                         {number}
                         </button>
                         </>)

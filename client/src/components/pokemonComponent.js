@@ -50,7 +50,6 @@ function PokemonPage({ currentPokemon, currentPage }) {
                 {formatExtraInformation(singlePoke)}
                 <div style={{ textAlign: 'center' }}>
                     <Button
-                        variant="dark"
                         size="sm"
                         className="learn-more-button"
                         onClick={() => setIndividualPoke("")}
@@ -70,7 +69,6 @@ function PokemonPage({ currentPokemon, currentPage }) {
                 <Pokemon key={item.id} pokemon={item} />
                 <div style={{ textAlign: 'center' }}>
                     <Button
-                        variant="dark"
                         size="sm"
                         className="learn-more-button"
                         onClick={() => getMoreInfo(item.id)}

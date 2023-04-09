@@ -44,23 +44,28 @@ function App() {
 
   return (
     <div className="app-container">
-      <button
-        onClick={async () => {
-          await apiLogout();
-          navigate('/login');
-        }}>
-        Logout
-      </button>
-      <button onClick={() => navigate('/adminlogin')}> Admin Privileges! </button>
-      <br />
-
+      <header className="app-header">
+        <h1>Pokémon App</h1>
+        <button
+          onClick={async () => {
+            await apiLogout();
+            navigate('/login');
+          }}
+        >
+          Logout
+        </button>
+        <button className="admin-button" onClick={() => navigate('/adminlogin')}> Admin Privileges! </button>
+        <br />
+      </header>
       <div className="type-box-container">
+      <br />
         <TypeBox currentFilters={filters} setFilters={setFilter} />
       </div>
       <PokemonPage currentPokemon={currentPokemon} currentPage={currentPage} />
       <Pagination numPages={numOfPages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
-    </div >
+    </div>
   );
+
 }
 
 export default withBasicAuth(App);
