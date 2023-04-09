@@ -11,3 +11,33 @@
 .pokeLabel {
     font-size: 20px;
 }
+
+/* pokemon-page.css */
+.extra-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.extra-info .type {
+    font-weight: bold;
+}
+
+.extra-info .base-stats {
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.extra-info .stats {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.extra-info .stats .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
