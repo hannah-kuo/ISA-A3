@@ -3,6 +3,7 @@ import { Col, Container, Row, Card, Button} from "react-bootstrap";
 import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { apiGetSinglePokemon } from "../api/pokeAPI";
+import '../styles/app.css';
 
 
 function PokemonPage({ currentPokemon, currentPage }) {
@@ -38,8 +39,9 @@ function PokemonPage({ currentPokemon, currentPage }) {
                 {formatExtraInformation(singlePoke)}
                 <div style={ {textAlign: 'center'}}> 
                                 <Button 
-                                variant="info"
+                                variant="dark"
                                 size="sm"
+                                className="learn-more-button"
                                 onClick={() => setIndividualPoke("")}
                                 > 
                                 Minimize 
@@ -57,8 +59,9 @@ function PokemonPage({ currentPokemon, currentPage }) {
                 <Pokemon key = { item.id } pokemon= { item } />
                 <div style={ {textAlign: 'center'}}> 
                     <Button 
-                    variant="info"
+                    variant="dark"
                     size="sm"
+                    className="learn-more-button"
                     onClick={() => getMoreInfo(item.id)}
                     > 
                     Learn More 
@@ -72,7 +75,7 @@ function PokemonPage({ currentPokemon, currentPage }) {
         <div> 
 
         <h1 style={ {textAlign: 'center' }}>
-            Page {currentPage}!
+            Page {currentPage}
         </h1> 
 
         <Container>        

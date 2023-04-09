@@ -63,3 +63,23 @@ button:hover {
 .type-box-container {
   margin-bottom: 20px;
 }
+
+.learn-more-button {
+  background-color: #BBA390;
+  color: #F7E4CB;
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: background-color 0.3s;
+  margin: 5px;
+}
+
+.learn-more-button:hover {
+  background-color: #F7E4CB;
+  color: #957166;
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: background-color 0.3s;
+  margin: 5px;
+}

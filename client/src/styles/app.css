@@ -1,7 +1,7 @@
 .photo {
     height: 150px;
     width: 150px;
-  }
+}
 
 .imageContainer {
     display: flex;
@@ -9,5 +9,5 @@
 }
 
 .pokeLabel {
-    font-size:25px;
+    font-size: 20px;
 }

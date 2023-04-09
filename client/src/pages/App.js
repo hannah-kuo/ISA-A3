@@ -44,21 +44,22 @@ function App() {
 
   return (
     <div className="app-container">
-      <Button
+      <button
         onClick={async () => {
           await apiLogout();
           navigate('/login');
-        }}
-      >
+        }}>
         Logout
-      </Button>
+      </button>
+      <button onClick={() => navigate('/adminlogin')}> Admin Privileges! </button>
+      <br />
+
       <div className="type-box-container">
         <TypeBox currentFilters={filters} setFilters={setFilter} />
       </div>
       <PokemonPage currentPokemon={currentPokemon} currentPage={currentPage} />
       <Pagination numPages={numOfPages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
-      <button onClick={() => navigate('/adminlogin')}> Admin Privileges! </button>
-    </div>
+    </div >
   );
 }
 
