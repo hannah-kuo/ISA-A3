@@ -1,0 +1,13 @@
+.photo {
+    height: 150px;
+    width: 150px;
+  }
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.pokeLabel {
+    font-size:25px;
+}
